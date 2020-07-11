@@ -3,7 +3,7 @@ import AddMessageComponent from "../components/AddMessage";
 import { addMessage } from "../actions";
 
 export const mapDispatchToProps = dispatch=> ({
-    dispatch: (message,author) => {
+    addMessage: (message,author) => {
         dispatch(addMessage(message, author))
     }
 })

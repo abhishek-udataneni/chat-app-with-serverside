@@ -9,13 +9,15 @@ const setupSocket = (dispatch,username) => {
             type : types.ADD_USER,
             name: username
         }))
+        console.log(username)
     }
 
     socket.onmessage = (event) => {
+        console.log(event)
         const data = JSON.parse(event.data);
         switch (data.type){
             case types.ADD_MESSAGE:
-                dispatch(messageReceived(data.message,data.author));
+                dispatch(messageReceived(data.message,"income"));
                 break
             case types.ADD_USER:
                 dispatch(addUser(data.name));

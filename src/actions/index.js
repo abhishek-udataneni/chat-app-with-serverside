@@ -12,6 +12,13 @@ export const addMessage = (message,author) =>{
     }
 )}
 
+export const editMessage = (message,id) =>{ 
+    return ({
+        type: types.EDIT_MESSAGE,
+        message,
+        id,
+    }
+)} 
 export const addUser = (name)=>({
     type: types.ADD_USER,
     id:nextUserId+1,
